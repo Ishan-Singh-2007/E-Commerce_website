@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentEase - Rent Everything</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+    <a class="logo" href="#">Rent<span>Ease</span>
+        <small>Rent smart, save more!</small>
+    </a>
+
+    <input type="search" id="searchInput"
+           placeholder="Search for electronics, books, cameras...">
+
+    <button class="search-btn" id="searchButton">Search</button>
+
+    <button class="cart-btn" id="openCart">
+        🛒 Cart <span id="cartCount">0</span>
+    </button>
+</header>
+
+<section class="category-bar">
+    <button class="category active" data-category="All">All Products</button>
+    <button class="category" data-category="Electronics">Electronics</button>
+    <button class="category" data-category="Gaming">Gaming</button>
+    <button class="category" data-category="Cameras">Cameras</button>
+    <button class="category" data-category="Study">Study</button>
+    <button class="category" data-category="Lifestyle">Lifestyle</button>
+</section>
+
+<main>
+    <section class="hero">
+        <div>
+            <p class="eyebrow">SMART RENTING MADE SIMPLE</p>
+            <h1>Need it? <span>Rent it.</span></h1>
+            <p>Gadgets, gaming gear, study essentials and more — all in one place.</p>
+            <a href="#products" class="hero-btn">Explore Products ↓</a>
+        </div>
+        <div class="hero-art">🛍️</div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="section-title">
+            <div>
+                <p class="eyebrow">OUR COLLECTION</p>
+                <h2>Products for every need</h2>
+            </div>
+            <select id="sortSelect">
+                <option value="default">Sort: Recommended</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="name">Name: A to Z</option>
+            </select>
+        </div>
+
+        <p class="result-count" id="resultCount">25 products available</p>
+
+        <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="how-section">
+        <h2>How RentEase works</h2>
+        <div class="steps">
+            <article><span>01</span><h3>Choose a product</h3>
+                <p>Browse and select what you need.</p></article>
+            <article><span>02</span><h3>Select rental days</h3>
+                <p>Choose a duration and check the price.</p></article>
+            <article><span>03</span><h3>Add to cart</h3>
+                <p>Review your selected products and demo total.</p></article>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <a class="logo" href="#">Rent<span>Ease</span></a>
+    <p>Student E-commerce Project · HTML, CSS & JavaScript</p>
+    <p>Demo only — no real orders or payments.</p>
+</footer>
+
+<!-- Shopping cart -->
+<div class="overlay" id="cartOverlay">
+    <section class="cart-modal">
+        <div class="cart-heading">
+            <h2>Your Rental Cart</h2>
+            <button id="closeCart" class="close-btn">✕</button>
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total rental cost</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+            <button id="checkoutBtn" class="checkout-btn">
+                Proceed to Checkout
+            </button>
+            <p>Demo checkout only. No payment will be collected.</p>
+        </div>
+    </section>
+</div>
+
+<div id="toast" class="toast" aria-live="polite"></div>
+
+</body>
+</html>
