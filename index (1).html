@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Header Section -->
     <header class="navbar">
         <div class="logo">
             <h2>Rent<span>Ease</span></h2>
@@ -19,44 +18,40 @@
             <button id="searchBtn">Search</button>
         </div>
 
-        <div class="cart-box">
-            <button id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
+        <div class="nav-right">
+            <button onclick="toggleDarkMode(this)">Dark Mode</button>
         </div>
     </header>
 
-    <!-- Categories -->
     <div class="categories">
-        <button class="cat-btn active" onclick="filterCategory('All')">All</button>
-        <button class="cat-btn" onclick="filterCategory('Electronics')">Electronics</button>
-        <button class="cat-btn" onclick="filterCategory('Gaming')">Gaming</button>
-        <button class="cat-btn" onclick="filterCategory('Cameras')">Cameras</button>
-        <button class="cat-btn" onclick="filterCategory('Study')">Study</button>
+        <a href="#all" class="cat-btn">All</a>
+        <a href="#electronics" class="cat-btn">Electronics</a>
+        <a href="#gaming" class="cat-btn">Gaming</a>
+        <a href="#cameras" class="cat-btn">Cameras</a>
+        <a href="#study" class="cat-btn">Study</a>
     </div>
 
-    <!-- Hero Banner -->
     <section class="banner">
-        <div class="banner-text">
-            <h1>Rent What You Need, Anytime</h1>
-            <p>Affordable rentals for gadgets, cameras, gaming setups and more.</p>
-            <a href="#products" class="btn-main">View Products</a>
-        </div>
+        <h1>Rent What You Need, Anytime</h1>
+        <p>Affordable rentals for gadgets, cameras, gaming setups and more.</p>
     </section>
 
-    <!-- Products Section -->
-    <section class="products-container" id="products">
-        <div class="section-header">
-            <h2>Available Products</h2>
-            <select id="sortSelect" onchange="sortProducts()">
-                <option value="default">Default</option>
-                <option value="low">Price: Low to High</option>
-                <option value="high">Price: High to Low</option>
-            </select>
-        </div>
+    <section class="products-container" id="all">
+        <p id="noResults" style="display: none;">No products found.</p>
 
-        <div id="productGrid" class="product-grid"></div>
+        <h2 id="electronics">Electronics</h2>
+        <div id="electronicsGrid" class="product-grid"></div>
+
+        <h2 id="gaming">Gaming</h2>
+        <div id="gamingGrid" class="product-grid"></div>
+
+        <h2 id="cameras">Cameras</h2>
+        <div id="camerasGrid" class="product-grid"></div>
+
+        <h2 id="study">Study</h2>
+        <div id="studyGrid" class="product-grid"></div>
     </section>
 
-    <!-- How It Works -->
     <section class="how-it-works">
         <h2>How It Works</h2>
         <div class="steps-row">
@@ -69,34 +64,16 @@
                 <p>Select number of days you need it for.</p>
             </div>
             <div class="step-card">
-                <h3>3. Place Order</h3>
-                <p>Add to cart and confirm demo checkout.</p>
+                <h3>3. Rent Directly</h3>
+                <p>Click Rent Now to confirm your booking instantly.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>RentEase - College Web Development Project</p>
         <p>Made with HTML, CSS, and JavaScript</p>
     </footer>
-
-    <!-- Cart Modal -->
-    <div id="cartModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Shopping Cart</h3>
-                <button class="close-btn" id="closeCart">X</button>
-            </div>
-
-            <div id="cartItemsList"></div>
-
-            <div class="modal-footer">
-                <p>Total: <strong id="cartTotal">₹0</strong></p>
-                <button id="checkoutBtn" class="checkout-btn">Checkout</button>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
